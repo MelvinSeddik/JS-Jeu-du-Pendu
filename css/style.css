@@ -1,0 +1,385 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    min-width: 280px;
+
+}
+
+.flex{
+    display: flex;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    padding: 8px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.jcenter{
+    justify-content: center;
+}
+
+.acenter{
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.active-t{
+    display: table;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+}
+
+td,th{
+    border: 2px solid black;
+    width: 200px;
+}
+
+td{
+    padding: 10px;
+    height: 50px;
+}
+
+#modal-start{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+    z-index: 99;
+}
+
+#modal-start-content{
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    background: white;
+}
+
+#modal-start-content *{
+    margin: 10px;
+}
+
+#time{
+    margin: 0 5px;
+}
+/*  */
+section{
+    background: rgb(204, 204, 204);
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background: url("../img/grey-bg.jpg") no-repeat center/cover;
+}
+
+h1{
+    font-size: 3em;
+    text-decoration: underline;
+    font-family: 'Bungee Inline', cursive;
+    margin: 0;
+}
+
+h2{
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Walter Turncoat', cursive;
+}
+
+/* Clavier visuel */
+
+#letters{
+    width: 50%;
+    max-width: 840px;
+    flex-wrap: wrap;
+    background:url("../img/pink-bg.jpg") no-repeat center/cover;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 15px;
+}
+
+#letters div{
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 5px;
+    border: 2px solid black;
+    box-shadow: 0 0 4px black;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#letters div:hover{
+    background: rgb(24, 24, 24);
+}
+
+#letters div:active{
+    background: rgb(47, 47, 47);
+}
+
+.green{
+    background: #2ABB00!important;
+}
+
+.red{
+    background: #BB0014!important;
+}
+
+/* Lettres du mot */
+.letter{
+    margin: 0 10px;
+    font-size: 40px;
+}
+
+.letter:first-of-type{
+    text-transform: uppercase;
+}
+
+/* Dessin pendu */
+#canvas{
+    background: rgb(255, 255, 255);
+    height: 380px;
+    width: 300px;
+    box-shadow: 0 0 10px black;
+}
+
+#xBase{
+    width: 175px;
+    height: 23px;
+    stroke: rgb(66, 29, 4);
+    stroke-width: 20;
+}
+
+#yBase{
+    width: 16px;
+    height: 295px;
+    stroke: rgb(39, 16, 0);
+    stroke-width: 17;
+}
+
+#top-rect{
+    width: 222px;
+    height: 17px;
+    stroke: rgb(126, 0, 0);
+    stroke-width: 17;
+}
+
+#rope{
+    stroke:rgb(167, 86, 33)
+}
+
+#upper-body{
+    stroke-width: 13;
+}
+
+#left-arm, #right-arm{
+    stroke-width: 7;
+}
+
+#left-leg, #right-leg{
+    stroke-width: 8;
+} 
+
+line, ellipse{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+line{
+    stroke-width: 6;
+    stroke: black;
+}
+
+ellipse{
+    stroke: black;
+    fill: transparent;
+    stroke-width: 6;
+}
+
+/* Affichage fin de partie */
+
+#score{
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    font-size: 1.2em;
+}
+
+#modal{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+    display: none;
+}
+
+#modal > div{
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 350px;
+    width: 500px;
+}
+
+#modal2{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+    display: none;
+}
+
+#modal2 > div{
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 300px;
+    width: 400px;
+}
+
+.ok, #new-word{
+    background: green;
+    color: white;
+}
+.ok:hover, #new-word:hover{
+    background: rgb(0, 97, 0);
+}
+
+.no{
+    background: rgb(207, 0, 0);
+    color: white;
+}
+
+.no:hover{
+    background: rgb(148, 0, 0);
+}
+
+#categorie{
+    background: rgb(0, 81, 255);
+    color: white;
+}
+
+#categorie:hover{
+    background: rgb(0, 67, 212);
+}
+
+#classement{
+    background: #ffc400;
+}
+
+.cat{
+    display: none;  
+}
+
+.cat a{
+    color: black;
+    text-decoration: none;
+    background: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.cat a:hover{
+    background: rgb(218, 218, 218);
+}
+
+.activef{
+    display: flex;
+}
+
+@keyframes move{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@media only screen and (max-width: 1130px){
+    #letters{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    #letters{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 760px){
+    #letters{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 560px){
+    #lives{
+        font-size: 2em;
+    }
+
+    #word *{
+        font-size: 2em;
+    }
+
+    #letters div{
+        margin: 4px 2px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .letter{
+        margin: 0 7px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #letters div{
+        width: 38px;
+        height: 38px;
+        font-size: 26px;
+        margin: 4px 1px;
+    }
+
+    .letter{
+        margin: 0 3px;
+    }
+
+    h1{
+        font-size: 2.2em;
+    }
+
+    #lives{
+        font-size: 1.5em;
+    }
+
+    #word * {
+        font-size: 1.7em;
+    }
+}
